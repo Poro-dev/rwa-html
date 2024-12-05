@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RWA Pulse</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* HEADER SECTION */
+    .header {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      background: url('images/background-header.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      z-index: 1;
+    }
+
+    .header__logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2; /* Above the overlay */
+    }
+
+    .header__logo img {
+      height: 80px; /* Adjust logo size */
+    }
+
+    .header__title {
+      font-size: 5rem;
+      font-weight: 800;
+      margin: 40px 0;
+      line-height: 1.2;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header__subtitle {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #146EF5; 
+      margin-top: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SCROLLING MENU */
+    .scrolling-menu {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none; /* Hidden by default */
+      justify-content: space-between; /* Aligns logo to the left */
+      align-items: center;
+      width: 80%; /* Centered and not touching the sides */
+      padding: 15px 30px;
+      background-color: #1C1C1C; /* Dark background */
+      color: white;
+      border-radius: 12px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .scrolling-menu.visible {
+      display: flex; /* Shows the header when scrolling */
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .scrolling-menu__logo img {
+      height: 40px; /* Adjust logo size */
+    }
+
+    .scrolling-menu__nav {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .scrolling-menu__nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500; /* Medium weight for emphasis */
+      font-size: 1.2rem; /* Slightly larger text */
+      transition: color 0.3s ease;
+    }
+
+    .scrolling-menu__nav a:hover {
+      color: #1c71f5; /* Blue accent color */
+    }
+
+    /* TABLE SECTION WITH BACKGROUND */
+    .table-section {
+      background: url('images/background-header.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 50px 20px; /* Adds spacing around the table */
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .table-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      z-index: 1;
+    }
+
+    .table-container {
+      position: relative;
+      z-index: 2; /* Ensures the table is above the overlay */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px; /* Space inside the table container */
+      background-color: rgba(255, 255, 255, 0.9); /* Light background for readability */
+      border-radius: 12px; /* Rounded corners for the table */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: middle;
+      height: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #1c71f5;
+      color: white;
+      font-size: 17px;
+    }
+
+    td {
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #e6f0ff !important;
+      transition: background-color 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER SECTION -->
+  <header class="header">
+    <div class="header__logo">
+      <img src="images/RWA_brand.png" alt="RWA Brand Logo">
+    </div>
+    <h1 class="header__title">Your only source for<br>ALL things tokenization</h1>
+    <p class="header__subtitle">Unlocking the pulse of RWA and Tokenization</p>
+  </header>
+
+  <!-- SCROLLING MENU -->
+  <div class="scrolling-menu" id="scroll-menu">
+    <div class="scrolling-menu__logo">
+      <img src="images/RWAicon.png" alt="Logo">
+    </div>
+    <nav class="scrolling-menu__nav">
+      <a href="#home">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#insights">Insights</a>
+    </nav>
+  </div>
+
+  <!-- TABLE SECTION -->
+  <div class="table-section">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Title</th>
+            <th>Published</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody id="news-table">
+          <!-- Data will populate dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const scrollMenu = document.getElementById('scroll-menu');
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.scrollY;
+      if (currentScrollPosition > 100) {
+        scrollMenu.classList.add('visible');
+      } else {
+        scrollMenu.classList.remove('visible');
+      }
+    });
+
+    async function loadNews() {
+      const jsonUrl = "https://raw.githubusercontent.com/Poro-dev/RWA-web/main/9.Formatted_Feeds.json";
+      const logoToken = "pk_Ngp9u65eQRiSXNeSb3cZCA";
+      const tableBody = document.getElementById("news-table");
+      try {
+        const response = await fetch(jsonUrl);
+        if (!response.ok) throw new Error("Failed to fetch news data.");
+        const data = await response.json();
+        data.forEach(item => {
+          if (item.source && item.title && item.link) {
+            const row = document.createElement("tr");
+            const sourceCell = document.createElement("td");
+            const img = document.createElement("img");
+            img.src = `https://img.logo.dev/${item.source.toLowerCase().replace(/[^a-z0-9]/g, "")}.com?token=${logoToken}`;
+            img.alt = item.source;
+            img.style.height = "30px";
+            img.style.marginRight = "10px";
+            sourceCell.appendChild(img);
+            sourceCell.appendChild(document.createTextNode(item.source));
+            row.appendChild(sourceCell);
+            const titleCell = document.createElement("td");
+            titleCell.textContent = item.title;
+            row.appendChild(titleCell);
+            const dateCell = document.createElement("td");
+            dateCell.textContent = item.published;
+            row.appendChild(dateCell);
+            const linkCell = document.createElement("td");
+            const link = document.createElement("a");
+            link.href = item.link;
+            link.textContent = "🔗";
+            link.target = "_blank";
+            linkCell.appendChild(link);
+            row.appendChild(linkCell);
+            tableBody.appendChild(row);
+          }
+        });
+      } catch (error) {
+        tableBody.innerHTML = `<tr><td colspan="4">Error: ${error.message}</td></tr>`;
+      }
+    }
+
+    loadNews();
+  </script>
+</body>
+</html>
