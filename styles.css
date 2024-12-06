@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #000;
+  background-size: cover;
+  color: #fff;
+}
+
+.header__logo img {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.header__title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.header__subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #146EF5;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Content Section */
+.content {
+  max-width: 1200px;
+  margin: 20px auto; /* Adjusted margin to remove extra space */
+  padding: 0 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+/* Table Styling */
+.styled-table {
+  width: 100%; /* Full-width table */
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  background-color: #333;
+  color: #000; /* Default font color for rows */
+}
+
+/* Table Header */
+.styled-table th {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 15px;
+  background-color: #146EF5; /* Defined blue for the header */
+  color: #fff; /* White text for the header */
+  text-align: left;
+}
+
+/* Table Body Rows */
+.styled-table tbody tr {
+  background-color: #fff; /* Default row color: white */
+  transition: background-color 0.3s;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f0f8ff; /* Light blue for zebra stripes */
+}
+
+.styled-table tbody tr:hover {
+  background-color: #a5d8ff; /* Intense light blue for hover */
+}
+
+/* Cell Padding */
+.styled-table td {
+  padding: 15px 10px; /* Add padding for row height */
+  color: #000; /* Black font color for text */
+}
+
+/* Define Column Widths */
+.styled-table th:nth-child(1),
+.styled-table td:nth-child(1) {
+  width: 20%; /* Adjust the width of the Source column */
+}
+
+.styled-table th:nth-child(2),
+.styled-table td:nth-child(2) {
+  width: 60%; /* Adjust the width of the Title column */
+}
+
+.styled-table th:nth-child(3),
+.styled-table td:nth-child(3) {
+  width: 10%; /* Adjust the width of the Published column */
+}
+
+.styled-table th:nth-child(4),
+.styled-table td:nth-child(4) {
+  width: 10%; /* Adjust the width of the Link column */
+}
+
+/* Circular Logo */
+.styled-table td img {
+  width: 32px; /* Adjusted size for reduced circle */
+  height: 32px;
+  border-radius: 50%; /* Makes the logo circular */
+  object-fit: cover; /* Ensures the image fits inside the circle */
+  margin-right: 10px;
+  vertical-align: middle; /* Aligns with text */
+}
+
+/* Link Emoji Styling */
+.styled-table td a {
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Default size for link emoji */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.styled-table td a:hover {
+  transform: scale(1.15); /* Slightly enlarge link icon on hover */
+}
